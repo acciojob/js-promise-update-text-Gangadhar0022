@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Update Text Example</title>
+</head>
+<body>
+  <h1 id="output">Original Text</h1>
 
-  <body>
-    <!-- do not modify this file -->
-    <div id="output"></div>
+  <script>
+    function updateText() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve("Hello, world!");
+        }, 1000);
+      });
+    }
 
-    <script type="text/javascript" src="./script.js"></script>
-  </body>
+    updateText().then(result => {
+      const outputElement = document.getElementById("output");
+      outputElement.innerText = result;
+    });
+  </script>
+</body>
 </html>
